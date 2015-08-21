@@ -44,6 +44,8 @@ public :
     bool clisten();
     bool caccept();
     bool cbind();
+	// todo
+	bool cconnect();
 
     void stop();
 
