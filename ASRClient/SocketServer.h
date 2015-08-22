@@ -26,6 +26,56 @@
 */
 
 
+class SocketClient
+{
+public :
+	SocketClient(const unsigned short port);
+	~SocketClient();
+	bool cconnect(const char * addr);
+/*! \brief csend : sends string data through client socket.
+*
+*/
+    bool csend(const std::string&);
+
+/*! \brief csend : sends any data type through client socket.
+*
+*/
+    bool csend(void *buffer,size_t size);
+
+    bool csend(int value);
+    int csend_r(char * buffer, size_t size);
+/*! \brief crecv : receive socket wrapper function
+*
+* crecv : receive socket wrapper function. This function reads
+* the amount specified by expectedSize. Blocking function.
+*
+* \param buffer : receive buffer
+* \param expectedSize : size max to read
+* \return read size : if -1 : client disconnected.
+*/
+    int crecv(void *buffer, size_t expectedSize);
+
+/*! \brief creceive : receive socket wrapper function
+*
+* creceive : receive socket wrapper function. This function reads at max
+* the amount specified by expectedSize.  Reads less, if less.
+*
+* \param buffer : receive buffer
+* \param expectedSize : size max to read
+* \return read size : if -1 : client disconnected.
+*/
+    int creceive(void *buffer, size_t expectedSize);
+
+    int creceive(int *);
+
+
+private :
+    short socket_fd;
+    bool status;
+    unsigned short port;
+    std::ofstream log;
+}
+
 
 /*! \class SocketServer
 * \brief Socket Wrapper implementation.

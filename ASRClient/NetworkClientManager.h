@@ -2,7 +2,7 @@
 
 #include "SocketServer.h"
 
-class NetworkClientManager : public SocketServer
+class NetworkClientManager : public SocketClient
 {
 public :
 	NetworkClientManager(const int);

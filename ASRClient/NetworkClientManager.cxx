@@ -5,6 +5,7 @@
 
 NetworkClientManager::NetworkClientManager(const int port) : SocketServer(port)
 {
+
 }
 
 NetworkClientManager::~NetworkClientManager()

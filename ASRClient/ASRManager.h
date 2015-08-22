@@ -42,6 +42,7 @@ public :
 	static int ManageAudio(void *);
 
 private :
+	bool stop;
 	cEvent pause;
 	cEvent dataReady; // event poped when data ready on circular buffer...
 	ASRManager(const int);
